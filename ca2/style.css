@@ -1,0 +1,338 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   }
+
+.navbar {
+    background-color: white;
+    height: 80px;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+
+.underline::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: red;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.underline:hover::before,
+.underline.nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+.nav-link.underline {
+    position: relative;
+}
+
+.hero-section {
+    background-image: url('../images/sp_happy_faces.png'); /* image attribution: https://www.sp.edu.sg/ image credit: Singapore Polytechnic*/
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.hero-section::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: ""; /* Defines an empty content for the ::before pseudo-element to enable styling */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-section .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+  }
+  .carousel-container {
+    max-width: 600px; /* Increase this value to make the carousel larger */
+  }
+
+  .visionAndMission, .Moments, .milestone{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .header {
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.header::after {
+    content: '';
+    display: block;
+    width: 100%; /* Make the line as long as the text */
+    height: 3px; /* Adjust height as needed */
+    background-color: red;
+    margin-top: 10px; /* Adjust space between text and underline as needed */
+}
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    background-color: grey;
+    color: white;
+    padding: 2em; /* Reduced padding for better layout */
+    border: 0;
+    border-radius: 1em;
+    transition: all .5s;
+    margin: 2em; /* Increased margin for more spacing */
+    min-width: 300px; /* Set a minimum width for the cards */
+  }
+  
+  /* Create a pseudo-element that will be used for the background effect */
+.card::before {
+  content: ''; /* Empty content for the pseudo-element */
+  position: absolute; /* Position the pseudo-element absolutely relative to the .card */
+  top: 0; /* Align to the top of the .card */
+  left: -100%; /* Start off-screen to the left */
+  width: 100%; /* Full width of the .card */
+  height: 100%; /* Full height of the .card */
+  background-color: red; /* Background color of the pseudo-element */
+  transition: all .5s; /* Smooth transition for all properties over 0.5 seconds */
+  z-index: 1; /* Place the pseudo-element below the .card-body */
+}
+
+/* Change the position of the pseudo-element on hover */
+.card:hover::before {
+  left: 0; /* Move the pseudo-element into view */
+}
+
+/* Ensure the .card-body is above the pseudo-element */
+.card-body {
+  position: relative; /* Position relative to stack above the .card::before */
+  z-index: 2; /* Place .card-body above the pseudo-element */
+}
+
+/* Center-align the text within the card title */
+.card-title {
+  text-align: center; /* Center-align text */
+}
+
+  @keyframes scrollIn {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .hero-section .h1 {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease-out;
+  }
+  
+  .hero-section .h1.animate {
+    animation: scrollIn 1s forwards;
+  }
+
+  @keyframes scrollIn {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .visionAndMission .header {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.5s ease-out;
+  }
+  
+  .visionAndMission .header.animate {
+    animation: scrollIn 1s forwards;
+  }
+
+  .custom-container {
+    margin-top: 20px;
+}
+
+.image-container {
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.image-container img:hover {
+    transform: scale(1.05);
+}
+.image-title {
+    font-size: 1.5em;
+    margin-top: 10px;
+    text-align: center;
+}
+.image-caption {
+    font-size: 1em;
+    color: #555;
+    text-align: center;
+} 
+
+
+@keyframes scrollIn {
+  from {
+      transform: translateY(100px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.Moments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(100px); /* Initial position for animation */
+  transition: all 0.5s ease-out; /* Smooth transition (will be overridden by animation) */
+}
+
+.header.animate {
+  animation: scrollIn 1s forwards; /* Apply scrollIn animation */
+}
+
+/* Custom footer styling */
+
+.btn.btn-outline-light.btn-text-opacity {
+  color: rgba(255, 255, 255, 0.5) !important; /* Ensure higher specificity */
+}
+
+.btn.btn-outline-light.btn-text-opacity:hover {
+  color: rgba(255, 255, 255, 1) !important; /* Fully opaque on hover */
+}
+
+.accordion-button {
+  background-color: red;
+  color: white;
+  width: 100%;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+}
+.accordion-button:not(.collapsed) {
+  background-color: red;
+  color: white;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-collapse {
+  background-color: #f8f9fa;
+}
+
+.accordion-button::after {
+  display: none; /* Hides the arrow */
+}
+
+ /* Custom styles to handle underline */
+ .header-underline::after {
+  content: '';
+  display: block;
+  width: auto; /* Adjust the width as needed */
+  height: 4px; /* Line thickness */
+  background-color: red; /* Line color */
+  margin: 10px auto 0; /* Margin above the line */
+}
+
+.header-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px; /* Space below the text */
+  opacity: 0; /* Hide the header initially */
+  transform: translateY(100px); /* Start position for slide-up effect */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth transitions */
+}
+
+.header-underline.animate {
+  opacity: 1; /* Make the header visible */
+  transform: translateY(0); /* Move the header to its final position */
+}
+
+.header-underline::after {
+  content: '';
+  display: block;
+  width: 100%; /* Make the underline as wide as the header */
+  height: 3px; /* Line thickness */
+  background-color: red; /* Line color */
+  position: absolute;
+  bottom: 0; /* Position the line directly below the text */
+  left: 0; /* Align to the left of the text */
+}
+
+.red-underline {
+  position: relative; /* Positioning context for the underline */
+  display: inline-block; /* Ensures the underline matches the text width */
+  padding-bottom: 5px; /* Space between text and underline */
+}
+
+.red-underline::after {
+  content: '';
+  display: block;
+  width: 100%; /* Make the underline as wide as the text */
+  height: 3px; /* Line thickness */
+  background-color: red; /* Line color */
+  position: absolute;
+  bottom: 0; /* Position the line directly below the text */
+  left: 0; /* Align to the left of the text */
+}
+
